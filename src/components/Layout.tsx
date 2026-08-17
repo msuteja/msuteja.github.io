@@ -4,6 +4,7 @@ import { LocationStatus } from "./LocationStatus";
 const navigation = [
   { label: "home", to: "/", disabled: false },
   { label: "projects", to: "/projects", disabled: false },
+  { label: "food", to: "/food", disabled: false },
   { label: "writings (Coming Soon)", to: "/writings", disabled: true },
 ];
 
