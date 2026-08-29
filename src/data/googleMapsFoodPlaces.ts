@@ -1,8 +1,1263 @@
 import type { FoodPlace } from "./restaurants";
 
 // Generated from Michael's public Google Maps contributions.
-// Re-run scripts/import-google-maps-food.mjs when the source ratings change.
+// Re-run scripts/import-google-maps-food.mjs with --merge-existing when ratings change.
 export const googleMapsFoodPlaces: FoodPlace[] = [
+  {
+    "id": "the-daily-cut-raffles-place",
+    "name": "The Daily Cut (Raffles Place)",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2838967,
+    "longitude": 103.8510609,
+    "cuisines": [
+      "Health Food"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tian-tian-hainanese-chicken-rice-lucky-plaza",
+    "name": "Tian Tian Hainanese Chicken Rice - Lucky Plaza",
+    "type": "hawker",
+    "area": "Central Area",
+    "latitude": 1.3045795,
+    "longitude": 103.8340621,
+    "cuisines": [
+      "Hawker Stall"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "song-fa-signatures",
+    "name": "Song Fa Signatures",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3039053999999999,
+    "longitude": 103.8355763,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "treasures-yi-dian-xin",
+    "name": "Treasures Yi Dian Xin",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3037786999999998,
+    "longitude": 103.835139,
+    "cuisines": [
+      "Dim Sum"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "ps-cafe-palais-renaissance",
+    "name": "PS.Cafe Palais Renaissance",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3068807999999998,
+    "longitude": 103.82975959999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "genki-sushi-chinatown-point",
+    "name": "Genki Sushi Chinatown Point",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2852093,
+    "longitude": 103.8447228,
+    "cuisines": [
+      "Sushi",
+      "Japanese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "shashlik-restaurant",
+    "name": "Shashlik Restaurant",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.305512,
+    "longitude": 103.8300944,
+    "cuisines": [
+      "Russian",
+      "Fusion",
+      "Steak"
+    ],
+    "priceLevel": 4,
+    "recommended": false
+  },
+  {
+    "id": "monster-planet-tampines-1",
+    "name": "Monster Planet - Tampines 1",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.354212,
+    "longitude": 103.94503519999999,
+    "cuisines": [
+      "Japanese Curry"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "hoshino-coffee-plaza-singapura",
+    "name": "Hoshino Coffee @ Plaza Singapura",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2997406,
+    "longitude": 103.84554179999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "nando-s-plaza-singapura-flame-grilled-peri-peri-chicken",
+    "name": "Nando's Plaza Singapura | Flame-Grilled PERi-PERi Chicken",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3008229999999998,
+    "longitude": 103.8450257,
+    "cuisines": [
+      "Chicken",
+      "Portuguese",
+      "South African"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "beach-road-scissor-cut-curry-rice",
+    "name": "Beach Road Scissor-Cut Curry Rice",
+    "type": "restaurant",
+    "area": "Kallang",
+    "latitude": 1.3095386,
+    "longitude": 103.8577696,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "bao-er-cafe",
+    "name": "Bao Er Cafe",
+    "type": "restaurant",
+    "area": "Novena",
+    "latitude": 1.3257027,
+    "longitude": 103.85034209999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "hjh-maimunah-mini-tampines-mall",
+    "name": "Hjh Maimunah Mini Tampines Mall",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3524509999999998,
+    "longitude": 103.9446732,
+    "cuisines": [
+      "Halal"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "hjh-maimunah-restaurant-and-catering",
+    "name": "Hjh Maimunah Restaurant and Catering",
+    "type": "restaurant",
+    "area": "Kampong Glam",
+    "latitude": 1.303149,
+    "longitude": 103.8585258,
+    "cuisines": [
+      "Halal",
+      "Indonesian"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tsui-wah-the-cathay",
+    "name": "翠華 TSUI WAH - The Cathay",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2993784,
+    "longitude": 103.84780269999999,
+    "cuisines": [
+      "Hong Kong style fast food"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "a9-parklane-noodle-dumpling",
+    "name": "A9 Parklane Noodle Dumpling 面条饺子",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3006609999999998,
+    "longitude": 103.8493367,
+    "cuisines": [
+      "Dumpling"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "pasta-e-formaggio-p-and-f-international-plaza",
+    "name": "Pasta e Formaggio(P&F) @ International Plaza",
+    "type": "restaurant",
+    "area": "Tanjong Pagar",
+    "latitude": 1.2761211,
+    "longitude": 103.8459859,
+    "cuisines": [
+      "Italian",
+      "Pasta"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tipo-pasta-bar-waterloo",
+    "name": "Tipo Pasta Bar — Waterloo",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3000782,
+    "longitude": 103.85275659999999,
+    "cuisines": [
+      "Italian"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "mandalay-style-myanmar-restaurant",
+    "name": "Mandalay Style Myanmar Restaurant",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2921110999999998,
+    "longitude": 103.85055849999999,
+    "cuisines": [
+      "Burmese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "inle-myanmar-restaurant",
+    "name": "Inle Myanmar Restaurant",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2921178,
+    "longitude": 103.8507451,
+    "cuisines": [
+      "Burmese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "ramen-dining-keisuke-tokyo-capitol-singapore",
+    "name": "Ramen Dining Keisuke Tokyo [Capitol Singapore]",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2935459999999999,
+    "longitude": 103.8511091,
+    "cuisines": [
+      "Ramen"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "bold-thai",
+    "name": "Bold Thai",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2930439,
+    "longitude": 103.85156169999999,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "sichuan-alley-capitol-singapore",
+    "name": "Sichuan Alley Capitol Singapore",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2935459999999999,
+    "longitude": 103.8511091,
+    "cuisines": [
+      "Sichuan"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "han-s-cafe-chinatown-point",
+    "name": "Han's Cafe (Chinatown Point)",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2855936,
+    "longitude": 103.8452344,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "ami-patisserie",
+    "name": "AMI Patisserie",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3105554,
+    "longitude": 103.83414769999999,
+    "cuisines": [
+      "Patisserie"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "market-street-hawker-centre",
+    "name": "Market Street Hawker Centre",
+    "type": "hawker",
+    "area": "Central Area",
+    "latitude": 1.2849618999999999,
+    "longitude": 103.8502058,
+    "cuisines": [
+      "Hawker center"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "jumbo-seafood-the-riverwalk",
+    "name": "JUMBO Seafood - The Riverwalk",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2893135,
+    "longitude": 103.84829479999999,
+    "cuisines": [
+      "Seafood"
+    ],
+    "priceLevel": 4,
+    "recommended": false
+  },
+  {
+    "id": "jumbo-seafood-riverside-point",
+    "name": "JUMBO Seafood - Riverside Point",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2889217,
+    "longitude": 103.84466139999999,
+    "cuisines": [
+      "Seafood"
+    ],
+    "priceLevel": 4,
+    "recommended": false
+  },
+  {
+    "id": "ann-chin-popiah-chinatown",
+    "name": "Ann Chin Popiah (Chinatown)",
+    "type": "hawker",
+    "area": "Chinatown",
+    "latitude": 1.282003,
+    "longitude": 103.84313859999999,
+    "cuisines": [
+      "Hawker Stall"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "the-1950-s-coffee",
+    "name": "The 1950's Coffee “五十年代”",
+    "type": "hawker",
+    "area": "Chinatown",
+    "latitude": 1.2822882,
+    "longitude": 103.8432964,
+    "cuisines": [
+      "Hawker Stall"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "jia-xiang-chinese-restaurant",
+    "name": "Jia Xiang Chinese Restaurant",
+    "type": "restaurant",
+    "area": "Chinatown",
+    "latitude": 1.2846195,
+    "longitude": 103.84401229999999,
+    "cuisines": [
+      "Chinese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "chef-lam-s-sichuan-cuisine",
+    "name": "Chef Lam’s Sichuan Cuisine | 兰堂川菜",
+    "type": "restaurant",
+    "area": "Chinatown",
+    "latitude": 1.2765775,
+    "longitude": 103.84621899999999,
+    "cuisines": [
+      "Sichuan"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "paradise-dynasty-at-suntec-city",
+    "name": "Paradise Dynasty at Suntec City",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2946423999999999,
+    "longitude": 103.8593028,
+    "cuisines": [
+      "Chinese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tai-er-suntec-city",
+    "name": "TAI ER 太二酸菜鱼 (Suntec City)",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2948112999999999,
+    "longitude": 103.85935819999999,
+    "cuisines": [
+      "Chinese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "sinpopo-brand-restaurant-tangs",
+    "name": "Sinpopo Brand Restaurant @ TANGS",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3047925999999999,
+    "longitude": 103.8329237,
+    "cuisines": [
+      "Singaporean"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "sinpopo-coffee-at-scotts",
+    "name": "Sinpopo Coffee at Scotts",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.305752,
+    "longitude": 103.83294749999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "atrium",
+    "name": "Atrium",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2922456,
+    "longitude": 103.8582946,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "lobby-lounge",
+    "name": "Lobby Lounge",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2933158,
+    "longitude": 103.8591757,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "3-meals-a-day",
+    "name": "一日三餐 3 meals a day",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3530328,
+    "longitude": 103.95372689999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "mr-bucket-chocolaterie-and-restaurant",
+    "name": "Mr. Bucket Chocolaterie & Restaurant",
+    "type": "restaurant",
+    "area": "Tanglin",
+    "latitude": 1.3047446999999999,
+    "longitude": 103.81035089999999,
+    "cuisines": [
+      "Chocolate factory"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tiong-bahru-hainanese-boneless-chicken-rice",
+    "name": "Tiong Bahru Hainanese Boneless Chicken Rice",
+    "type": "hawker",
+    "area": "Tampines",
+    "latitude": 1.3538302,
+    "longitude": 103.9452872,
+    "cuisines": [
+      "Hawker Stall"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "malaysia-boleh-tampines-1",
+    "name": "Malaysia Boleh! @ Tampines 1",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3538617,
+    "longitude": 103.9452281,
+    "cuisines": [
+      "Asian"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "old-world-bakuteh-and-fried-porridge",
+    "name": "Old World Bakuteh & Fried Porridge",
+    "type": "hawker",
+    "area": "Tampines",
+    "latitude": 1.3711936999999998,
+    "longitude": 103.93311089999999,
+    "cuisines": [
+      "Hawker Stall",
+      "Chinese",
+      "Porridge"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "the-ramen-house",
+    "name": "The Ramen House",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3020471999999998,
+    "longitude": 103.85038109999999,
+    "cuisines": [
+      "Ramen",
+      "Asian Fusion",
+      "Japanese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "la-jiang-shan-jiang-shi-fu-noodle-house",
+    "name": "La Jiang Shan Jiang Shi Fu Noodle House 姜师傅私房面家",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3006556999999999,
+    "longitude": 103.8495705,
+    "cuisines": [
+      "Chinese Noodles"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "freshio-gelato",
+    "name": "Freshio Gelato",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3005700999999998,
+    "longitude": 103.85045219999999,
+    "cuisines": [
+      "Ice Cream"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "victor-s-kitchen",
+    "name": "Victor's Kitchen",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3003063,
+    "longitude": 103.8507815,
+    "cuisines": [
+      "Dim Sum",
+      "Chinese bakery",
+      "Chinese tea house"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "zenso-thai",
+    "name": "Zenso Thai",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.30005,
+    "longitude": 103.85106619999999,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "wawa-lala-bee-hoon-fortune-centre",
+    "name": "Wawa Lala Bee Hoon (Fortune Centre)",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3004749,
+    "longitude": 103.85185159999999,
+    "cuisines": [
+      "Chinese",
+      "Seafood"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "those-days-yong-tau-foo-and-nasi-lemak",
+    "name": "THOSE DAYS Yong Tau Foo & Nasi Lemak",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3003187999999999,
+    "longitude": 103.85215679999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "bao-er-cafe-2",
+    "name": "Bao Er Cafe",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3005427999999999,
+    "longitude": 103.85189629999999,
+    "cuisines": [
+      "Asian"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "j-b-ah-meng-restaurant",
+    "name": "J.B. Ah Meng Restaurant",
+    "type": "restaurant",
+    "area": "Geylang",
+    "latitude": 1.3137378,
+    "longitude": 103.8861926,
+    "cuisines": [
+      "Chinese",
+      "Seafood"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "bali-thai-imm",
+    "name": "Bali Thai (IMM)",
+    "type": "restaurant",
+    "area": "Jurong East",
+    "latitude": 1.3355188,
+    "longitude": 103.7465842,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "bali-thai-ngee-ann-city",
+    "name": "Bali Thai (Ngee Ann City)",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3027417,
+    "longitude": 103.8344403,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "indo-rasa-singapore",
+    "name": "Indo Rasa Singapore",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3073044,
+    "longitude": 103.8333325,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "ofira-amazing-thai-food",
+    "name": "Ofira Amazing Thai Food",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3069244,
+    "longitude": 103.83376319999999,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "hainanese-delicacy",
+    "name": "Hainanese Delicacy",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3072006999999999,
+    "longitude": 103.83369359999999,
+    "cuisines": [
+      "Chinese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "nana-original-thai-food-far-east-plaza",
+    "name": "Nana Original Thai Food Far East Plaza",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3074835,
+    "longitude": 103.8336942,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "new-station-snack-bar",
+    "name": "New Station Snack Bar",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3074306999999998,
+    "longitude": 103.83383769999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "kra-pow-thai-restaurant",
+    "name": "Kra pow Thai Restaurant",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3069716999999998,
+    "longitude": 103.83351379999999,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "mcdonald-s-lido",
+    "name": "McDonald's LIDO",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.305624,
+    "longitude": 103.83174129999999,
+    "cuisines": [
+      "Fast Food",
+      "Breakfast",
+      "Halal"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "cafe-de-muse-the-restaurant",
+    "name": "Cafe de Muse - The Restaurant",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3057174999999999,
+    "longitude": 103.83118619999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "mcdonald-s",
+    "name": "McDonald's",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3062146,
+    "longitude": 103.82875999999999,
+    "cuisines": [
+      "Fast Food",
+      "Breakfast",
+      "Halal"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "cakebar",
+    "name": "Cakebar",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.306841,
+    "longitude": 103.8297194,
+    "cuisines": [
+      "Pastries"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "siam-smith",
+    "name": "Siam Smith",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3066491999999998,
+    "longitude": 103.8295057,
+    "cuisines": [
+      "Thai"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "the-coffee-bean-and-tea-leaf-forum",
+    "name": "The Coffee Bean & Tea Leaf - Forum",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3064599,
+    "longitude": 103.82846119999999,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "pita-tree-kebabs-forum",
+    "name": "Pita Tree Kebabs - Forum",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3065209,
+    "longitude": 103.828774,
+    "cuisines": [
+      "Kebab Shop",
+      "Health food store",
+      "Mediterranean"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "kukai-orchard",
+    "name": "Kukai Orchard",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3071869,
+    "longitude": 103.82934429999999,
+    "cuisines": [
+      "Izakaya"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "somtam-saklai",
+    "name": "Somtam Saklai",
+    "type": "restaurant",
+    "area": "Kampong Glam",
+    "latitude": 1.301607,
+    "longitude": 103.8638445,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "maxwell-food-centre",
+    "name": "Maxwell Food Centre",
+    "type": "hawker",
+    "area": "Chinatown",
+    "latitude": 1.2803361,
+    "longitude": 103.84476699999999,
+    "cuisines": [
+      "Hawker center",
+      "Tourist attraction"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "birds-of-paradise-gelato-boutique-craig-tanjong-pagar",
+    "name": "Birds of Paradise Gelato Boutique – Craig (Tanjong Pagar)",
+    "type": "restaurant",
+    "area": "Chinatown",
+    "latitude": 1.2777648,
+    "longitude": 103.8422779,
+    "cuisines": [
+      "Ice Cream"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "daily-beer-telok-ayer",
+    "name": "Daily Beer (Telok Ayer)",
+    "type": "restaurant",
+    "area": "Chinatown",
+    "latitude": 1.2798889,
+    "longitude": 103.84707569999999,
+    "cuisines": [
+      "Korean"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tonkotsu-kazan-volcano-ramen-century-square",
+    "name": "Tonkotsu Kazan VOLCANO Ramen @ Century Square 豚骨火山ラーメン @ センチュリースクエア店",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3523349,
+    "longitude": 103.94375079999999,
+    "cuisines": [
+      "Ramen",
+      "Children's cafe",
+      "Cold noodle"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "nan-yang-dao-century-sq",
+    "name": "NAN YANG DAO南洋岛@Century SQ",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3523888,
+    "longitude": 103.9438567,
+    "cuisines": [
+      "Asian"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "ayam-penyet-president-century-square-tampines",
+    "name": "Ayam Penyet President - Century Square Tampines",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3525049999999998,
+    "longitude": 103.9439658,
+    "cuisines": [
+      "Indonesian",
+      "Chinese Takeout",
+      "Halal"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "wingstop-tampines-mall",
+    "name": "Wingstop Tampines Mall",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3524573,
+    "longitude": 103.94467259999999,
+    "cuisines": [
+      "Chicken Wings",
+      "Chicken"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "abundance-taiwanese-restaurant-and-craft-beer-bar-tampines",
+    "name": "Abundance: Taiwanese Restaurant & Craft Beer Bar (Tampines)",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3527219,
+    "longitude": 103.9436721,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "hawker-centre-our-tampines-hub",
+    "name": "Hawker Centre @ Our Tampines Hub",
+    "type": "hawker",
+    "area": "Tampines",
+    "latitude": 1.3538531,
+    "longitude": 103.9398238,
+    "cuisines": [
+      "Hawker center"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "kuan-zhai-changi-city-point",
+    "name": "Kuan Zhai 宽窄碗碗香 ( Changi City Point)",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3343497,
+    "longitude": 103.96262229999999,
+    "cuisines": [
+      "Sichuan",
+      "Chinese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "hawkers-street-tampines-1",
+    "name": "Hawkers' Street @ Tampines 1",
+    "type": "hawker",
+    "area": "Tampines",
+    "latitude": 1.353739,
+    "longitude": 103.9452558,
+    "cuisines": [
+      "Hawker"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "nanyang-jia-xiang-mixed-rice-chicken-rice",
+    "name": "Nanyang Jia Xiang Mixed Rice • Chicken Rice",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3545673999999999,
+    "longitude": 103.9438481,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 1,
+    "recommended": false
+  },
+  {
+    "id": "swee-choon-tim-sum-restaurant-tampines-century-square",
+    "name": "Swee Choon Tim Sum Restaurant - Tampines (Century Square)",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3526173,
+    "longitude": 103.94409519999999,
+    "cuisines": [
+      "Dim Sum"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "xiao-noodles-tampines-mrt",
+    "name": "Xiao Noodles @ Tampines MRT",
+    "type": "restaurant",
+    "area": "Tampines",
+    "latitude": 1.3531285,
+    "longitude": 103.9451541,
+    "cuisines": [
+      "Chinese Noodles"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "d-life-signature",
+    "name": "D'life Signature",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2852093,
+    "longitude": 103.8447228,
+    "cuisines": [
+      "Vegetarian"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "paris-baguette-chinatown",
+    "name": "Paris Baguette Chinatown",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.284805,
+    "longitude": 103.8446601,
+    "cuisines": [
+      "Bakery"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "din-tai-fung-chinatown-point",
+    "name": "Din Tai Fung @ Chinatown Point",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2851362,
+    "longitude": 103.8447065,
+    "cuisines": [
+      "Taiwanese"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "peach-garden-chinatown-point",
+    "name": "Peach Garden @ Chinatown Point",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.2856998,
+    "longitude": 103.8452733,
+    "cuisines": [
+      "Chinese",
+      "Dim Sum"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "han-s-cafe-111-somerset",
+    "name": "Han’s Cafe (111 Somerset)",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3001858,
+    "longitude": 103.8377976,
+    "cuisines": [
+      "Cake shop"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "poke-theory",
+    "name": "Poke Theory",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3002300999999998,
+    "longitude": 103.8373465,
+    "cuisines": [
+      "Poke bar",
+      "Juice",
+      "Salad"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "golden-mile-thien-kee-steamboat-hainanese-restaurant",
+    "name": "Golden Mile Thien Kee Steamboat Hainanese Restaurant",
+    "type": "restaurant",
+    "area": "Kampong Glam",
+    "latitude": 1.3021741,
+    "longitude": 103.8642924,
+    "cuisines": [
+      "Chinese",
+      "Steamboat"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "bouillon-gavroche",
+    "name": "Bouillon Gavroche",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3020467,
+    "longitude": 103.83663179999999,
+    "cuisines": [
+      "French"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "chen-s-kitchen",
+    "name": "Chen's Kitchen",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3036493,
+    "longitude": 103.8350923,
+    "cuisines": [
+      "Dining"
+    ],
+    "priceLevel": 3,
+    "recommended": false
+  },
+  {
+    "id": "yat-ka-yan-dessert-fortune-centre",
+    "name": "Yat Ka Yan Dessert (Fortune Centre)",
+    "type": "restaurant",
+    "area": "Bras Basah",
+    "latitude": 1.3006463,
+    "longitude": 103.8519965,
+    "cuisines": [
+      "Dessert shop"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
+  {
+    "id": "tambuah-mas-indonesian-restaurant-paragon-orchard-michelin-guide",
+    "name": "Tambuah Mas Indonesian Restaurant Paragon Orchard | Michelin Guide",
+    "type": "restaurant",
+    "area": "Central Area",
+    "latitude": 1.3036434,
+    "longitude": 103.8349946,
+    "cuisines": [
+      "Indonesian",
+      "Halal"
+    ],
+    "priceLevel": 2,
+    "recommended": false
+  },
   {
     "id": "the-coconut-club-beach-road",
     "name": "The Coconut Club Beach Road",
@@ -95,7 +1350,7 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
       "Asian",
       "Seafood"
     ],
-    "priceLevel": 2,
+    "priceLevel": 4,
     "recommended": false
   },
   {
@@ -249,7 +1504,7 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
   },
   {
     "id": "the-coconut-club-new-bahru",
-    "name": "The Coconut Club new bahru",
+    "name": "The Coconut Club New Bahru",
     "type": "restaurant",
     "area": "Central Area",
     "latitude": 1.2923499999999999,
@@ -492,7 +1747,7 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
       "Fine Dining",
       "Indian Takeout"
     ],
-    "priceLevel": 2,
+    "priceLevel": 4,
     "recommended": false
   },
   {
@@ -798,8 +2053,8 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
     "name": "Misato",
     "type": "restaurant",
     "area": "Central Area",
-    "latitude": 1.3005064,
-    "longitude": 103.8393827,
+    "latitude": 1.3005765999999999,
+    "longitude": 103.8391328,
     "cuisines": [
       "Japanese"
     ],
@@ -864,8 +2119,8 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
     "name": "Jaggi's Northern Indian Cuisine - Race Course Road",
     "type": "restaurant",
     "area": "Central Area",
-    "latitude": 1.308856,
-    "longitude": 103.851276,
+    "latitude": 1.3087636,
+    "longitude": 103.85124019999999,
     "cuisines": [
       "Indian",
       "Punjabi",
@@ -962,8 +2217,8 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
     "name": "Ng Kuan Chilli Pan Mee Bencoolen",
     "type": "restaurant",
     "area": "Bras Basah",
-    "latitude": 1.3008832,
-    "longitude": 103.8518019,
+    "latitude": 1.300899,
+    "longitude": 103.8518022,
     "cuisines": [
       "Dining"
     ],
@@ -975,8 +2230,8 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
     "name": "Al-Jilani Restaurant",
     "type": "restaurant",
     "area": "Bras Basah",
-    "latitude": 1.3008184999999999,
-    "longitude": 103.85174789999999,
+    "latitude": 1.300822,
+    "longitude": 103.8517431,
     "cuisines": [
       "Indian Muslim",
       "Halal",
@@ -1068,7 +2323,7 @@ export const googleMapsFoodPlaces: FoodPlace[] = [
     "recommended": false
   },
   {
-    "id": "3-meals-a-day",
+    "id": "3-meals-a-day-2",
     "name": "3 Meals a Day",
     "type": "restaurant",
     "area": "Bras Basah",

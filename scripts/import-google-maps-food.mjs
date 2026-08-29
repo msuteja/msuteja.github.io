@@ -1,11 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const [, , inputPath, requestedOutputPath] = process.argv;
+const argumentsList = process.argv.slice(2);
+const mergeExisting = argumentsList.includes("--merge-existing");
+const [inputPath, requestedOutputPath] = argumentsList.filter(
+  (argument) => argument !== "--merge-existing",
+);
 
 if (!inputPath) {
   throw new Error(
-    "Usage: node scripts/import-google-maps-food.mjs <Google Maps payload.txt> [output.ts]",
+    "Usage: node scripts/import-google-maps-food.mjs <Google Maps payload.txt> [output.ts] [--merge-existing]",
   );
 }
 
@@ -82,7 +86,7 @@ if (!Array.isArray(contributions)) {
 }
 
 const usedIds = new Map();
-const places = contributions.flatMap((contribution) => {
+let places = contributions.flatMap((contribution) => {
   const place = contribution?.[4];
   const icon = place?.[8]?.[1];
   const countryCode = place?.[29];
@@ -123,7 +127,26 @@ const places = contributions.flatMap((contribution) => {
   ];
 });
 
-const source = `import type { FoodPlace } from "./restaurants";\n\n// Generated from Michael's public Google Maps contributions.\n// Re-run scripts/import-google-maps-food.mjs when the source ratings change.\nexport const googleMapsFoodPlaces: FoodPlace[] = ${JSON.stringify(places, null, 2)};\n`;
+let preservedCount = 0;
+
+if (mergeExisting && fs.existsSync(outputPath)) {
+  const existingSource = fs.readFileSync(outputPath, "utf8");
+  const arrayStart = existingSource.indexOf("[", existingSource.indexOf(" = "));
+  const arrayEnd = existingSource.lastIndexOf("]") + 1;
+  const existingPlaces = JSON.parse(existingSource.slice(arrayStart, arrayEnd));
+  const currentNames = new Set(places.map((place) => slugify(place.name)));
+  const preservedPlaces = existingPlaces.filter(
+    (place) => !currentNames.has(slugify(place.name)),
+  );
+
+  preservedCount = preservedPlaces.length;
+  places = [...places, ...preservedPlaces];
+}
+
+const source = `import type { FoodPlace } from "./restaurants";\n\n// Generated from Michael's public Google Maps contributions.\n// Re-run scripts/import-google-maps-food.mjs with --merge-existing when ratings change.\nexport const googleMapsFoodPlaces: FoodPlace[] = ${JSON.stringify(places, null, 2)};\n`;
 
 fs.writeFileSync(outputPath, source);
-console.log(`Wrote ${places.length} Singapore food places to ${outputPath}`);
+console.log(
+  `Wrote ${places.length} Singapore food places to ${outputPath}` +
+    (preservedCount ? ` (${preservedCount} older places preserved)` : ""),
+);

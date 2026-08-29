@@ -2,6 +2,7 @@ export const siteLinks = {
   email: "mailto:michaelsuteja05@gmail.com",
   linkedin: "https://www.linkedin.com/in/michael-suteja/",
   github: "https://github.com/msuteja/",
+  steam: "https://steamcommunity.com/id/mashtamich3",
   letterboxd: "https://letterboxd.com/msmichaels/",
   piano: "https://www.youtube.com/@michaelsuteja7218",
 };

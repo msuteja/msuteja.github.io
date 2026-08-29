@@ -10,6 +10,7 @@ const contacts = [
   { label: "Email", href: siteLinks.email },
   { label: "LinkedIn", href: siteLinks.linkedin },
   { label: "GitHub", href: siteLinks.github },
+  { label: "Steam", href: siteLinks.steam },
   { label: "Letterboxd", href: siteLinks.letterboxd },
 ];
 
