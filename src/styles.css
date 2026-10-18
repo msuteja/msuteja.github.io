@@ -608,17 +608,80 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--link); outline-
 .food-map-selection svg { flex: 0 0 auto; width: 0.9rem; height: 0.9rem; color: var(--link); }
 .food-log { width: min(100%, 820px); margin: 4rem auto 0; }
 .food-log-header { margin-bottom: 1rem; }
-.food-filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.45rem; }
-.food-filters button {
-  padding: 0.3rem 0.55rem;
+.food-results-count,
+.food-results-range { color: var(--muted); font-size: 0.64rem; }
+.food-filter-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) repeat(3, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--soft);
+}
+.food-filter-bar > label:not(.food-recommended-filter) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.food-filter-bar label > span:first-child {
+  color: var(--muted);
+  font-size: 0.58rem;
+}
+.food-filter-bar input[type="search"],
+.food-filter-bar select {
+  width: 100%;
+  min-width: 0;
+  height: 2.15rem;
+  padding: 0 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--text);
+  background: var(--background);
+  font: inherit;
+  font-size: 0.62rem;
+}
+.food-filter-bar input[type="search"]::placeholder { color: var(--muted); }
+.food-filter-bar input:focus-visible,
+.food-filter-bar select:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.food-recommended-filter {
+  display: flex;
+  height: 2.15rem;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.food-recommended-filter input {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0;
+  accent-color: var(--link);
+}
+.food-recommended-filter span { color: var(--secondary) !important; font-size: 0.6rem !important; }
+.food-results-range { margin: 0 0 0.65rem; }
+.food-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+.food-pagination button {
+  min-width: 2rem;
+  padding: 0.35rem 0.55rem;
   border: 1px solid transparent;
   color: var(--muted);
   background: transparent;
   cursor: pointer;
   font-size: 0.64rem;
 }
-.food-filters button:hover,
-.food-filters button.active { border-color: var(--border); color: var(--link); }
+.food-pagination button:hover:not(:disabled),
+.food-pagination button.active { border-color: var(--border); color: var(--link); }
+.food-pagination button:disabled { cursor: default; opacity: 0.35; }
+.food-page-numbers { display: flex; gap: 0.15rem; }
 .food-empty {
   margin: 0;
   padding: 1.25rem 0;
@@ -798,7 +861,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--link); outline-
   .food-map-selection { right: 0.7rem; bottom: 1.85rem; left: 0.7rem; }
   .food-log { margin-top: 3rem; }
   .food-log-header { align-items: flex-start; flex-direction: column; gap: 0.75rem; }
-  .food-filters { justify-content: flex-start; }
+  .food-filter-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .food-search-field,
+  .food-recommended-filter { grid-column: 1 / -1; }
+  .food-pagination { flex-wrap: wrap; }
   .writing-statement { margin-top: 2.8rem; }
   .writing-list > a { align-items: flex-start; flex-direction: column; gap: 0.15rem; }
   .article-page { padding: 3rem 0; }
@@ -813,6 +879,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--link); outline-
   .about-tabs button { padding-inline: 0.85rem; }
   .personal-list li { grid-template-columns: 1.6rem minmax(0, 1fr); }
   .experience-heading { flex-direction: column; gap: 0.2rem; }
+  .food-filter-bar { grid-template-columns: 1fr; }
+  .food-filter-bar > * { grid-column: 1; }
+  .food-pagination { justify-content: space-between; }
+  .food-page-numbers { order: 3; width: 100%; justify-content: center; }
   .writing-filters { flex-wrap: wrap; }
   .food-section-heading > span { display: none; }
   .food-map-legend { top: 0.7rem; left: 0.7rem; gap: 0.35rem 0.65rem; }

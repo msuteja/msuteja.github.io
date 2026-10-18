@@ -77,6 +77,38 @@ function cuisinesFor(categories, type) {
     : [type === "hawker" ? "Hawker" : "Dining"];
 }
 
+function googleMapsIdFor(place) {
+  const placeUrl = place?.[17]?.[0];
+  if (typeof placeUrl !== "string") return undefined;
+
+  const match = placeUrl.match(/!1s([^?]+)/);
+  return match ? decodeURIComponent(match[1]) : undefined;
+}
+
+function coordinateKey(place) {
+  if (
+    !Number.isFinite(place.latitude) ||
+    !Number.isFinite(place.longitude)
+  ) {
+    return undefined;
+  }
+
+  return `${place.latitude.toFixed(6)},${place.longitude.toFixed(6)}`;
+}
+
+function likelySamePlace(firstName, secondName) {
+  const first = slugify(firstName);
+  const second = slugify(secondName);
+  if (first.includes(second) || second.includes(first)) return true;
+
+  const firstTokens = new Set(first.split("-").filter(Boolean));
+  const secondTokens = new Set(second.split("-").filter(Boolean));
+  const sharedTokenCount = [...firstTokens].filter((token) =>
+    secondTokens.has(token),
+  ).length;
+  return sharedTokenCount / Math.max(firstTokens.size, secondTokens.size) >= 0.6;
+}
+
 const raw = fs.readFileSync(path.resolve(inputPath), "utf8");
 const payload = JSON.parse(raw.replace(/^\)\]\}'\r?\n/, ""));
 const contributions = payload?.[45]?.[0];
@@ -115,6 +147,7 @@ let places = contributions.flatMap((contribution) => {
   return [
     {
       id: duplicateNumber ? `${baseId}-${duplicateNumber + 1}` : baseId,
+      googleMapsId: googleMapsIdFor(place),
       name,
       type,
       area: place?.[32] || "Singapore",
@@ -127,6 +160,16 @@ let places = contributions.flatMap((contribution) => {
   ];
 });
 
+const seenGoogleMapsIds = new Set();
+places = places.filter((place) => {
+  if (place.googleMapsId && seenGoogleMapsIds.has(place.googleMapsId)) {
+    return false;
+  }
+
+  if (place.googleMapsId) seenGoogleMapsIds.add(place.googleMapsId);
+  return true;
+});
+
 let preservedCount = 0;
 
 if (mergeExisting && fs.existsSync(outputPath)) {
@@ -135,15 +178,30 @@ if (mergeExisting && fs.existsSync(outputPath)) {
   const arrayEnd = existingSource.lastIndexOf("]") + 1;
   const existingPlaces = JSON.parse(existingSource.slice(arrayStart, arrayEnd));
   const currentNames = new Set(places.map((place) => slugify(place.name)));
-  const preservedPlaces = existingPlaces.filter(
-    (place) => !currentNames.has(slugify(place.name)),
+  const currentGoogleMapsIds = new Set(
+    places.map((place) => place.googleMapsId).filter(Boolean),
   );
+  const preservedPlaces = existingPlaces.filter((place) => {
+    const coordinates = coordinateKey(place);
+    const renamedCurrentPlace = coordinates
+      ? places.find(
+          (currentPlace) =>
+            coordinateKey(currentPlace) === coordinates &&
+            likelySamePlace(currentPlace.name, place.name),
+        )
+      : undefined;
+    return !(
+      currentNames.has(slugify(place.name)) ||
+      (place.googleMapsId && currentGoogleMapsIds.has(place.googleMapsId)) ||
+      renamedCurrentPlace
+    );
+  });
 
   preservedCount = preservedPlaces.length;
   places = [...places, ...preservedPlaces];
 }
 
-const source = `import type { FoodPlace } from "./restaurants";\n\n// Generated from Michael's public Google Maps contributions.\n// Re-run scripts/import-google-maps-food.mjs with --merge-existing when ratings change.\nexport const googleMapsFoodPlaces: FoodPlace[] = ${JSON.stringify(places, null, 2)};\n`;
+const source = `import type { FoodPlace } from "./restaurants";\n\n// Generated from Michael's public Google Maps contributions.\n// The public feed is refreshed first; --merge-existing preserves older places that Google no longer returns.\n// Re-run scripts/import-google-maps-food.mjs with --merge-existing when ratings change.\nexport const googleMapsFoodPlaces: FoodPlace[] = ${JSON.stringify(places, null, 2)};\n`;
 
 fs.writeFileSync(outputPath, source);
 console.log(

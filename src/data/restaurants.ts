@@ -5,6 +5,7 @@ export type PriceLevel = 1 | 2 | 3 | 4;
 
 export type FoodPlace = {
   id: string;
+  googleMapsId?: string;
   name: string;
   type: FoodPlaceType;
   area: string;
