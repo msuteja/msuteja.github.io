@@ -763,15 +763,12 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--link); outline-
   opacity: 0.9;
 }
 .sisyphus-figure figcaption {
-  display: flex;
   width: min(100%, 310px);
-  justify-content: space-between;
-  gap: 1rem;
   margin-top: 0.55rem;
   color: var(--muted);
   font-size: 0.6rem;
 }
-.sisyphus-figure figcaption a { flex: 0 0 auto; color: var(--muted); }
+.sisyphus-figure figcaption a { color: var(--muted); }
 .sisyphus-figure figcaption a:hover { color: var(--link); }
 .film-recommender {
   width: min(100%, 780px);

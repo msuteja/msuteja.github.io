@@ -18,9 +18,8 @@ export function SisyphusFilmAnimation() {
         />
       </div>
       <figcaption>
-        <span>the watchlist grows faster than the climb</span>
         <a href={sisyphusSource} target="_blank" rel="noreferrer">
-          Titian, c. 1548–49
+          <cite>Sisyphus</cite>, 1548–1549 — Titian
         </a>
       </figcaption>
     </figure>
