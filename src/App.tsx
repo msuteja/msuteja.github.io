@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { FoodPage } from "./pages/FoodPage";
+import { FilmRecommendationPage } from "./pages/FilmRecommendationPage";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
@@ -22,6 +23,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="food" element={<FoodPage />} />
+          <Route path="recommend-a-film" element={<FilmRecommendationPage />} />
           <Route path="writings" element={<WritingsPage />} />
           <Route path="writings/:slug" element={<WritingPage />} />
           <Route path="*" element={<NotFoundPage />} />
