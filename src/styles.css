@@ -329,6 +329,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--link); outline-
 }
 .index-header h1 { margin: 0; font-size: 1rem; line-height: 1.5; }
 .index-header p { margin: 0; color: var(--secondary); font-size: 0.8rem; }
+.projects-page { width: min(100%, 1100px); margin: 0 auto; }
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
